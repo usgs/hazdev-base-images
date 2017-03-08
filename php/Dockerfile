@@ -1,19 +1,12 @@
 ## Docker file to build php apache server as container
 
-FROM centos:centos7
-MAINTAINER Dan McManus <dmcmanus@usgs.gov>
-LABEL dockerfile_version="v0.1.0"
-
-
-# Allow builds within DOI network
-COPY DOIRootCA2.crt /etc/pki/ca-trust/source/anchors/DOIRootCA2.crt
+FROM usgs/hazdev-base-images:centos
+MAINTAINER Jeremy Fee <jmfee@usgs.gov>
+LABEL dockerfile_version="v0.2.0"
 
 
 # Update current system packages and install custom repos for packages later
-RUN yum upgrade -y && \
-    yum updateinfo -y && \
-    yum install -y \
-      ca-certificates \
+RUN yum install -y \
       autoconf \
       gcc \
       g++ \
@@ -28,9 +21,7 @@ RUN yum upgrade -y && \
       xz-utils \
       which \
       && \
-    yum clean all && \
-    update-ca-trust enable && \
-    update-ca-trust extract
+    yum clean all
 
 
 # Install primary necessary packages
