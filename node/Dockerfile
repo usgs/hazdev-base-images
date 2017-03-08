@@ -1,6 +1,6 @@
 ## Docker file to build express applications for hazdev team
 
-FROM usgs/hazdev-base-images:centos
+FROM usgs/hazdev-base-images:latest-centos
 MAINTAINER Eric Martinez <emartinez@usgs.gov>
 LABEL dockerfile_version="v0.2.0"
 

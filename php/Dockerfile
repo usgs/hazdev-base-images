@@ -1,6 +1,6 @@
 ## Docker file to build php apache server as container
 
-FROM usgs/hazdev-base-images:centos
+FROM usgs/hazdev-base-images:latest-centos
 MAINTAINER Jeremy Fee <jmfee@usgs.gov>
 LABEL dockerfile_version="v0.2.0"
 
