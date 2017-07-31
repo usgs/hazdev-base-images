@@ -21,9 +21,6 @@ RUN /bin/bash --login -c " \
     npm install --cafile=${SSL_CERT_FILE} -g grunt-cli && \
     npm install --cafile=${SSL_CERT_FILE} --production"
 RUN /bin/bash --login -c "grunt builddist"
-# install
-RUN mkdir -p /data/www/apps/hazdev-template
-RUN cp -r dist/* /data/www/apps/hazdev-template/.
 
 
 # generate image with only build output
@@ -31,7 +28,10 @@ FROM usgs/hazdev-base-images:latest-php
 # configuration that points to /data/www/apps
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 # install
-RUN mkdir -p /data/www/apps/hazdev-template
+RUN mkdir -p \
+    /data/www/html \
+    /data/www/apps/hazdev-template
+WORKDIR /data/www/html
 COPY --from=template /tmp/hazdev-template/dist/ /data/www/apps/hazdev-template/
 COPY --from=template /tmp/hazdev-template/src/htdocs/_config.inc.php /data/www/html/_config.inc.php
 # generate config
