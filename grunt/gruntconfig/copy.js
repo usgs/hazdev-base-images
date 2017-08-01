@@ -17,8 +17,7 @@ var copy = {
     src: [
       '**/*',
       '!**/*.js',
-      '!**/*.scss',
-      '!**/*.orig'
+      '!**/*.scss'
     ],
     filter: 'isFile',
     options: {

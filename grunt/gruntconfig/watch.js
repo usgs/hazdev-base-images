@@ -16,15 +16,6 @@ var watch = {
     ]
   },
 
-  livereload: {
-    options: {
-      livereload: config.liveReloadPort
-    },
-    files: [
-      config.build + '/' + config.src + '/**/*'
-    ]
-  },
-
   scripts: {
     files: [config.src + '/htdocs/**/*.js'],
     tasks: [
@@ -45,8 +36,7 @@ var watch = {
     files: [
       config.src + '/**/*',
       '!**/*.js',
-      '!**/*.scss',
-      '!**/*.orig'
+      '!**/*.scss'
     ],
     tasks: [
       'copy:build'
