@@ -9,8 +9,8 @@ _term () {
 trap _term SIGTERM
 
 
-# start grunt
-grunt &
+# start grunt in watch mode
+grunt watch &
 
 
 child=$!
