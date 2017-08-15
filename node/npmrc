@@ -1,1 +1,1 @@
-cafile=/etc/pki/ca-trust/source/anchors/DOIRootCA2.crt
+cafile=/etc/pki/tls/certs/ca-bundle.crt

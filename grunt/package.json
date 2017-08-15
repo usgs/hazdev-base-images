@@ -1,0 +1,44 @@
+{
+  "name": "hazdev-base-images-grunt",
+  "version": "0.0.1",
+  "description": "Skeleton for web application development.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usgs/hazdev-base-images.git"
+  },
+  "keywords": [
+    "usgs"
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "license": "CC0-1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "6.0.3",
+    "babel-preset-es2015": "6.9.0",
+    "babelify": "7.3.0",
+    "chai": "3.4.0",
+    "cssnano": "3.3.1",
+    "eslint": "3.6.1",
+    "glob": "7.0.3",
+    "grunt": "0.4.5",
+    "grunt-browserify": "4.0.1",
+    "grunt-contrib-clean": "0.6.0",
+    "grunt-contrib-copy": "0.8.2",
+    "grunt-contrib-uglify": "0.10.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-mocha-phantomjs": "3.0.0",
+    "grunt-postcss": "0.7.0",
+    "gruntify-eslint": "3.1.0",
+    "hazdev-webutils": "0.1.8",
+    "mocha": "2.1.0",
+    "postcss-calc": "5.0.0",
+    "postcss-import": "7.1.0",
+    "precss": "1.3.0",
+    "sinon": "1.17.1"
+  },
+  "engines": {
+    "node": "4.5.0"
+  }
+}

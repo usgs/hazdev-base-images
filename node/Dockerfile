@@ -2,7 +2,7 @@
 
 FROM usgs/hazdev-base-images:latest-centos
 MAINTAINER Eric Martinez <emartinez@usgs.gov>
-LABEL dockerfile_version="v0.2.0"
+LABEL dockerfile_version="v0.2.1"
 
 
 RUN yum install -y \
