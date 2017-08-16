@@ -2,7 +2,7 @@
 
 FROM usgs/hazdev-base-images:latest-centos
 MAINTAINER Jeremy Fee <jmfee@usgs.gov>
-LABEL dockerfile_version="v0.2.0"
+LABEL dockerfile_version="v0.2.1"
 
 
 # Update current system packages and install custom repos for packages later

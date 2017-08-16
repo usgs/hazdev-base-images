@@ -1,6 +1,6 @@
 FROM centos:7
 MAINTAINER Dan McManus <dmcmanus@usgs.gov>
-LABEL dockerfile_version="v0.2.0"
+LABEL dockerfile_version="v0.2.1"
 
 # Allow builds within DOI network
 COPY DOIRootCA2.crt /etc/pki/ca-trust/source/anchors/DOIRootCA2.crt
