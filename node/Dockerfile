@@ -6,6 +6,7 @@ LABEL dockerfile_version="v0.2.1"
 
 
 # configure npm "cafile" via environment
+ENV NODE_VERSION 6
 ENV NPM_CONFIG_CAFILE ${SSL_CERT_FILE}
 
 
@@ -20,4 +21,4 @@ RUN export NVM_DIR="/nvm" && \
        | /bin/bash && \
     echo 'export NVM_DIR=/nvm' >> /etc/profile.d/nvm.sh && \
     echo '. ${NVM_DIR}/nvm.sh' >> /etc/profile.d/nvm.sh && \
-    /bin/bash --login -c "nvm install 4.5.0"
+    /bin/bash --login -c "nvm install ${NODE_VERSION}"
