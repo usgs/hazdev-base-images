@@ -2,13 +2,17 @@
 
 FROM usgs/hazdev-base-images:latest-centos
 MAINTAINER Eric Martinez <emartinez@usgs.gov>
-LABEL dockerfile_version="v0.2.0"
+LABEL dockerfile_version="v0.2.1"
+
+
+# configure npm "cafile" via environment
+ENV NODE_VERSION 6
+ENV NPM_CONFIG_CAFILE ${SSL_CERT_FILE}
 
 
 RUN yum install -y \
       curl && \
     yum clean all
-
 
 # Install NVM
 RUN export NVM_DIR="/nvm" && \
@@ -17,7 +21,4 @@ RUN export NVM_DIR="/nvm" && \
        | /bin/bash && \
     echo 'export NVM_DIR=/nvm' >> /etc/profile.d/nvm.sh && \
     echo '. ${NVM_DIR}/nvm.sh' >> /etc/profile.d/nvm.sh && \
-    /bin/bash --login -c "nvm install 4.5.0"
-
-# Put this in place so the cafile is set and downstream  npm installs work
-COPY ./npmrc /nvm/versions/node/v4.5.0/etc/npmrc
+    /bin/bash --login -c "nvm install ${NODE_VERSION}"

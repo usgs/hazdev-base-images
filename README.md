@@ -2,4 +2,4 @@
 Project for managing Dockerfiles for building base container images.
 
 ## Version
-v0.2.0
+v0.2.1
